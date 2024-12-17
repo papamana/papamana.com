@@ -5,20 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Papamana - Enterprise Solutions</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .section-nav {
+            transition: all 0.3s;
+        }
+        .section-nav:hover {
+            background-color: rgba(37, 99, 235, 0.9);
+            transform: scale(1.2);
+        }
+    </style>
 </head>
 <body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav class="bg-white border-b border-gray-200 fixed w-full z-50">
+    <!-- Fixed Navigation Dots -->
+    <div class="fixed right-8 top-1/2 transform -translate-y-1/2 z-50 flex flex-col gap-4">
+        <a href="#home" class="section-nav w-3 h-3 rounded-full bg-blue-600"></a>
+        <a href="#features" class="section-nav w-3 h-3 rounded-full bg-blue-600"></a>
+        <a href="#portfolio" class="section-nav w-3 h-3 rounded-full bg-blue-600"></a>
+        <a href="#contact" class="section-nav w-3 h-3 rounded-full bg-blue-600"></a>
+    </div>
+
+    <!-- Fixed Top Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-white border-b border-gray-200 z-40">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
                     <span class="text-2xl font-bold text-blue-600">PAPAMANA</span>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#" class="text-gray-600 hover:text-blue-600">Solutions</a>
-                    <a href="#" class="text-gray-600 hover:text-blue-600">Services</a>
-                    <a href="#" class="text-gray-600 hover:text-blue-600">About</a>
-                    <a href="#" class="text-gray-600 hover:text-blue-600">Contact</a>
+                    <a href="#home" class="text-gray-600 hover:text-blue-600">Home</a>
+                    <a href="#features" class="text-gray-600 hover:text-blue-600">Features</a>
+                    <a href="#portfolio" class="text-gray-600 hover:text-blue-600">Portfolio</a>
+                    <a href="#contact" class="text-gray-600 hover:text-blue-600">Contact</a>
                     <button class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700">
                         Get Started
                     </button>
@@ -28,7 +48,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="pt-24 pb-12 bg-white">
+    <section id="home" class="min-h-screen flex items-center bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
                 <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
@@ -48,68 +68,68 @@
     </section>
 
     <!-- Features Section -->
-    <section class="py-16 bg-gray-50">
+    <section id="features" class="min-h-screen flex items-center bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
-                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2 text-gray-900">High Performance</h3>
-                    <p class="text-gray-600">Optimize your operations with our high-performance enterprise solutions designed for scale.</p>
+            <div class="space-y-16">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-4">Our Features</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Discover the powerful features that set us apart
+                    </p>
                 </div>
-
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
-                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                        </svg>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4 text-gray-900">High Performance</h3>
+                        <p class="text-gray-600">Optimize your operations with our high-performance enterprise solutions designed for scale.</p>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2 text-gray-900">Enhanced Security</h3>
-                    <p class="text-gray-600">Protect your business with enterprise-grade security features and compliance measures.</p>
-                </div>
 
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg">
-                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                        </svg>
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4 text-gray-900">Enhanced Security</h3>
+                        <p class="text-gray-600">Protect your business with enterprise-grade security features and compliance measures.</p>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2 text-gray-900">Scalable Solutions</h3>
-                    <p class="text-gray-600">Grow confidently with solutions that scale seamlessly with your business needs.</p>
+
+                    <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4 text-gray-900">Scalable Solutions</h3>
+                        <p class="text-gray-600">Grow confidently with solutions that scale seamlessly with your business needs.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <!-- Portfolio Section -->
-    <section class="py-16 bg-white">
+    <section id="portfolio" class="min-h-screen flex items-center bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Success Stories</h2>
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-4">Our Work</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Discover how we've helped businesses transform their operations and achieve remarkable results.
+                    Discover how we've helped businesses transform their operations
                 </p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Portfolio Item 1 -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Portfolio Items -->
                 <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
                     <img src="https://media.istockphoto.com/id/1409309637/vector/breaking-news-label-banner-isolated-vector-design.jpg?s=612x612&w=0&k=20&c=JoQHezk8t4hw8xXR1_DtTeWELoUzroAevPHo0Lth2Ow=" alt="Project 1" class="w-full h-48 object-cover"/>
                     <div class="p-6">
-                        <span class="text-blue-600 text-sm font-semibold">Braverli.com</span>
-                        <h3 class="text-xl font-bold text-gray-900 mt-2">News Website</h3>
-                        <p class="text-gray-600 mt-2">Helped a leading tech company modernize their infrastructure, resulting in 40% improved efficiency.</p>
-                        <a href="#" class="inline-flex items-center mt-4 text-blue-600 hover:text-blue-700">
-                            Learn More
-                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                            </svg>
-                        </a>
+                        <h3 class="text-xl font-bold text-gray-900">Media News API</h3>
+                        <p class="text-gray-600 mt-2">100% improved efficiency for serve API data.</p>
                     </div>
                 </div>
-
             </div>
             <div class="text-center mt-12">
                 <button class="border border-blue-600 text-blue-600 px-8 py-3 rounded-md hover:bg-blue-50">
@@ -119,14 +139,19 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="py-16 bg-blue-600">
+    <!-- Contact Section -->
+    <section id="contact" class="min-h-screen flex items-center bg-blue-600">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold text-white mb-4">Ready to Transform Your Business?</h2>
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Ready to Transform Your Business?</h2>
             <p class="text-xl text-blue-100 mb-8">Join thousands of enterprises that trust our solutions</p>
-            <button class="bg-white text-blue-600 px-8 py-3 rounded-md hover:bg-blue-50">
-                Contact Sales
-            </button>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <button class="bg-white text-blue-600 px-8 py-3 rounded-md hover:bg-blue-50">
+                    Contact Sales
+                </button>
+                <button class="border border-white text-white px-8 py-3 rounded-md hover:bg-blue-700">
+                    Schedule Demo
+                </button>
+            </div>
         </div>
     </section>
 
@@ -168,7 +193,7 @@
                 </div>
             </div>
             <div class="mt-12 pt-8 border-t border-gray-800 text-center text-gray-400">
-                <p>&copy; 2024 EnterpriseCore. All rights reserved.</p>
+                <p>&copy; 2024 papamana. All rights reserved.</p>
             </div>
         </div>
     </footer>
